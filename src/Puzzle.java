@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Puzzle {
 
@@ -6,13 +8,21 @@ public class Puzzle {
     public static void main(String[] args) {
 
         Desk desk = new Desk();
-       desk.setDeskAsc();
+        desk.setDeskAsc();
         desk.shuffle();
-       desk.deskPrint();
-        //int [] m = {1,-2,5,0,23,14,108,-11};
-        //int temp=0;
-        //for(int i=0; i<50; i++)
-        //    temp
+        desk.deskPrint();
+        System.out.println("Use S, W, A, D to move piece");
+        Scanner sc = new Scanner(System.in);
+        String s;
+        while(!desk.checkWinPosition())
+        {
+            s=sc.nextLine();
+            desk.movePiece(s);
+            desk.deskPrint();
+        }
+        System.out.println("Congratulations, you won!");
+
+
 
     }
 }
