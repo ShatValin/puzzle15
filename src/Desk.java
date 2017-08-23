@@ -19,10 +19,10 @@ public class Desk {
     }
 
     public void swap(int x1, int x2, int y1, int y2){
-        int temp;
-        temp=cells[x1][x2].getValue();
-        cells[x1][x2].setValue(cells[y1][y2].getValue());
-        cells[y1][y2].setValue(temp);
+        Cell temp;
+        temp=cells[x1][x2];
+        cells[x1][x2]=cells[y1][y2];
+        cells[y1][y2]=temp;
     }
     public void shuffle(){
         int [] r = new int [cells.length];
